@@ -6,8 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.*;
-import java.nio.file.Path;
-import java.util.Arrays;
 import java.util.Scanner;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -23,6 +21,34 @@ public final class GaussMethodUtils {
     @Setter
     private static double[] values = new double[NUMBER_OF_ARGUMENTS];
 
+    /**
+     * Вывод аргументов уравнения
+     */
+    public static void writeArguments(double[] arguments) {
+        System.out.println("Arguments:");
+        for (int i = 0; i < arguments.length; i++) {
+            System.out.println("x" + (i + 1) + " = " + arguments[i]);
+        }
+        System.out.println();
+    }
+
+    /**
+     * Чтение матрицы из файла
+     */
+    public static void read(String path) throws IOException {
+        try(Scanner scanner = new Scanner(new File(path))) {
+            for (int i = 0; i < coefficients.length; i++) {
+                for (int j = 0; j < coefficients[i].length; j++) {
+                    coefficients[i][j] = scanner.nextDouble();
+                }
+                values[i] = scanner.nextDouble();
+            }
+        }
+    }
+
+    /**
+     * Чтение матрицы с консоли
+     */
     public static void read() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter coefficients: ");
@@ -41,17 +67,5 @@ public final class GaussMethodUtils {
             System.out.println();
         }
     }
-
-    /**
-     * Вывод аргументов уравнения
-     */
-    public static void writeArguments(double[] arguments) {
-        System.out.println("Arguments:");
-        for (int i = 0; i < arguments.length; i++) {
-            System.out.println("x" + (i + 1) + " = " + arguments[i]);
-        }
-        System.out.println();
-    }
-
 
 }
