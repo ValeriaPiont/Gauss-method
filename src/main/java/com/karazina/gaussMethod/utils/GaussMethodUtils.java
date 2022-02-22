@@ -68,4 +68,18 @@ public final class GaussMethodUtils {
         }
     }
 
+    /**
+     * Вывод решенной системы уравнений
+     */
+    public static String writeSystem(double[][] arguments) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < coefficients.length; i++) {
+            for (int j = 0; j < coefficients[i].length; j++) {
+                stringBuilder.append(coefficients[i][j]).append(" ");
+            }
+            stringBuilder.append(" ").append(values[i]).append("\n");
+        }
+        return stringBuilder.toString();
+    }
+
 }

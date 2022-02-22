@@ -31,7 +31,7 @@ public class GaussMethod {
 
     /**
      * Прямой ход алгоритма
-     * Приведение к треугольной системе уравнений
+     * Преобразование матрицы к ступенчатому виду
      */
     private void straightRun() {
         for (int k = 0; k < coefficients.length - 1; k++) {
@@ -39,7 +39,6 @@ public class GaussMethod {
             for (int i = k + 1; i < coefficients.length; i++) {
                 double m = coefficients[i][k] / coefficients[k][k];
                 coefficients[i][k] = 0;
-
                 for (int j = k + 1; j < coefficients.length; j++) {
                     coefficients[i][j] -= m * coefficients[k][j];
                 }
