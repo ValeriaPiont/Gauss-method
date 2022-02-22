@@ -5,9 +5,10 @@ import org.junit.Assert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 
 class GaussMethodTest {
+
+    private static final double DELTA = 0;
 
     @DisplayName("Started test")
     @Test
@@ -22,7 +23,7 @@ class GaussMethodTest {
         gaussMethod.count();
         double[] actualArguments = gaussMethod.getArguments();
         double[] expectedArguments = {1, 2, 3};
-        Assert.assertArrayEquals(expectedArguments, actualArguments, 0);
+        Assert.assertArrayEquals(expectedArguments, actualArguments, DELTA);
     }
 
     @DisplayName("Variant 12")
@@ -38,7 +39,7 @@ class GaussMethodTest {
         gaussMethod.count();
         double[] actualArguments = gaussMethod.getArguments();
         double[] expectedArguments = {-0.16281390661062908, 0.9585916274336148, -0.09268790844550771};
-        Assert.assertArrayEquals(expectedArguments, actualArguments, 0);
+        Assert.assertArrayEquals(expectedArguments, actualArguments, DELTA);
     }
 
     @DisplayName("Variant 28")
@@ -54,7 +55,7 @@ class GaussMethodTest {
         gaussMethod.count();
         double[] actualArguments = gaussMethod.getArguments();
         double[] expectedArguments = {1.6702839312848305, -0.8283655934823737, -2.0702237159041426};
-        Assert.assertArrayEquals(expectedArguments, actualArguments, 0);
+        Assert.assertArrayEquals(expectedArguments, actualArguments, DELTA);
     }
 
     @DisplayName("Variant 29")
@@ -70,7 +71,7 @@ class GaussMethodTest {
         gaussMethod.count();
         double[] actualArguments = gaussMethod.getArguments();
         double[] expectedArguments = {1.0, 0.5, 0.25};
-        Assert.assertArrayEquals(expectedArguments, actualArguments, 0);
+        Assert.assertArrayEquals(expectedArguments, actualArguments, DELTA);
     }
 
     @DisplayName("Variant 30")
@@ -86,7 +87,7 @@ class GaussMethodTest {
         gaussMethod.count();
         double[] actualArguments = gaussMethod.getArguments();
         double[] expectedArguments = {1.205913102373842, -0.823259561943077, 1.1500632496478531};
-        Assert.assertArrayEquals(expectedArguments, actualArguments, 0);
+        Assert.assertArrayEquals(expectedArguments, actualArguments, DELTA);
     }
 
 }
